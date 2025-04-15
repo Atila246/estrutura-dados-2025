@@ -38,14 +38,39 @@ public class JogoDaVelha {
 || (tabuleiro[2][0] + tabuleiro[1][1] + tabuleiro[0][2] == marca*3)); 		// diagonal
     }
 
-    public int vencedor( ) {
-        if (eVencedor(X))
-            return(X);
-        else if (eVencedor(O)) 
-            return(O);
-        else 
-            return(0);
-        }
-        
+    public int vencedor() {
+        /** Implementar método indicando se há um vencedor e retornando o valor 1 ou -1
+         * para indicar o vencedor ou zero para indicar empate.
+         */
+        return 2;
+    }
 
+    
+    public String toString() {
+        /** Implementar o método to String que deve retornar
+         * uma string com o tabuleiro do jogo da velha com as peças
+         * nas posições corretas.
+         */
+        String retorno = "";
+        for (int i=0; i<3;i++){
+            for (int j=0; j<3; j++){
+                if(tabuleiro[i][j]==X) {
+                    retorno += ("X");
+                } else if (tabuleiro[i][j]==O) {
+                    retorno += ("O");
+                } else {
+                    retorno += (" ");
+                }
+                if (j<2){
+                    retorno += ("|");
+                }
+            }
+            //System.out.println();
+            if (i<2){
+                retorno += ("\n-----\n");
+            }
+
+        }   
+        return retorno;
+    }
 }
